@@ -12,5 +12,9 @@ hotel_ratings = [
 def display_hotels():
   return render_template('template.html', hotel_ratings=hotel_ratings)
 
+@app.route('/')
+def home():
+  return render_template('home.html')
+
 if __name__ == '__main__':
   app.run(debug=True)
