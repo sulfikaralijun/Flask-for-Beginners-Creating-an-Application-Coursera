@@ -14,7 +14,8 @@ def display_hotels():
 
 @app.route('/')
 def home():
-  return render_template('home.html')
+  message = 'Go To The Hotel List'
+  return render_template('home.html', msg=message)
 
 if __name__ == '__main__':
   app.run(debug=True)
