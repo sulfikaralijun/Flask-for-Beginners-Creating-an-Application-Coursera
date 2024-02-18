@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Lists</title>
-</head>
-<body>
-  <h1>Hotel lists</h1>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hotel Lists</title>
+		<style>
+			table,
+			table * {
+				border-collapse: collapse;
+				border: 2px solid;
+			}
+			td {
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Hotel lists</h1>
+		<table>
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Name</td>
+					<td>Rating</td>
+				</tr>
+			</thead>
+			<tbody>
+				{% for hotel in hotel_ratings %}
+				<tr>
+					<td>{{ hotel['ID'] }}</td>
+					<td>{{ hotel['name'] }}</td>
+					<td>{{ hotel['rating'] }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</body>
 </html>
